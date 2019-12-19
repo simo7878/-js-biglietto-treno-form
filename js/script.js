@@ -4,33 +4,33 @@
 //discounts
 // tariffa giovani
 //tariffa senior
-var kmDaPercorrere = parseInt(prompt('Quanti kilometri intende percorrere?'));
-console.log(kmDaPercorrere);
+var buttonGenera = document.getElementById('km')
+buttonGenera.addEventListener('click',
+  function() {
+    var nomeInput = getElementById('nome_utente')
+    var nomeInput = nomeInput.value;
+    console.log(nome);
+
+    var inputKm = document.getElementById('km')
+    var kmDaPercorrere = parseint(inputKm.value);
+    console.log(kmDaPercorrere);
+
+    var fasciaEtaSelect = getElementById('fascia_eta');
+    var fascia = fasciaEtaSelect.value;
+    console.log(fascia);
+
+    var priceKm = 0.21;
+    var tktPrice = kmDaPercorrere * priceKm;
+    console.log(tktPrice);
 
 
-var etaUtente = parseInt(prompt('quanti anni ha?'));
-console.log(etaUtente);
 
 
-var priceKm = 0.21;
-var tktPrice = kmDaPercorrere * priceKm;
-console.log(tktPrice);
+    if (fascia == 'minorenne') {
+      tktPrice = tktPrice - ((tktPrice * 20) / 100);
+    }
+    else if (fascia == 'over65') {
+      tktPrice = tktPrice - ((tktPrice * 40) / 100);
+    }
 
-//discounts
-// tariffa giovani
-var rateYoung = (tktPrice * 20 / 100);
-console.log(rateYoung);
-
-var messaggio;
-
-if (etaUtente < 18) {
-  tktPrice = tktPrice - ((tktPrice * 20) / 100);
-  messaggio: 'Puoi usufruire della tariffa giovani. Il costo del tuo biglietto è:' + tktPrice + '€';
-}
-else if (etaUtente > 65) {
-  tktPrice = tktPrice - ((tktPrice * 40) / 100);
-  messaggio: 'Puoi usufruire della tariffa senior. Il costo del tuo biglietto è:' + tktPrice + '€';
-}
-else {
-messaggio:  'Il costo del tuo biglietto è:' + tktPrice + '€';
-}
+    document.getElementById('nome_passeggero').innerHTML = nome;
