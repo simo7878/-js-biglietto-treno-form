@@ -69,3 +69,8 @@ input {
   background-color: gray;
   color: white;
 }
+.biglietto {
+  width: 80%;
+  background-color: white;
+  margin: 0 auto;
+}
